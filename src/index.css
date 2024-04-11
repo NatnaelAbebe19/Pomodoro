@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cirlce {
+  box-shadow: -6px -5px 20px 10px rgb(39, 42, 86);
+}
