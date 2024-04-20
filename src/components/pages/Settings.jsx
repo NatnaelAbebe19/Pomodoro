@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { TiTick } from "react-icons/ti";
 
@@ -10,7 +10,6 @@ function Settings({
   longBreakDuration,
   setLongBreakDuration,
   onClose,
-  onApply,
 }) {
   const modalRef = useRef();
 
@@ -32,14 +31,9 @@ function Settings({
     setLongBreakDuration(e.target.value);
   }
 
-  function onApply() {
-    onClose();
-  }
-
   return (
     <div className="w-[100dvw]">
       <form
-        // onSubmit={handleSubmit}
         ref={modalRef}
         onClick={modalClose}
         className="fixed flex justify-center items-center w-[365px] md:w-[500px] mx-auto inset-0 bg-opacity-30 backdrop-blur-sm"
@@ -124,7 +118,7 @@ function Settings({
           </div>
           <button
             type="button"
-            onClick={onApply}
+            onClick={onClose}
             className="relative top-[2.3rem] left-28 bg-[#F97170] p-2 px-4 text-white font-semibold rounded-full md:left-[10rem]"
           >
             Apply

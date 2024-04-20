@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Hero from "./components/pages/Hero";
 import { FaGear } from "react-icons/fa6";
+import Settings from "./components/pages/Settings";
 import Navbar from "./components/Navbar";
 
 function App() {

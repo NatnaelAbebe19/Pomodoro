@@ -19,7 +19,6 @@ function Hero({
 }) {
   const timerId = useRef(null);
   const [isPaused, setIsPaused] = useState(true);
-  // let Timing = useContext(TimerReset);
 
   function ringEnd() {
     const end = new Audio("/audio/End.mp3");
@@ -96,8 +95,6 @@ function Hero({
     setIsPaused(true);
     setActive("work");
   };
-
-  // Timing.setTimersReset(handleReset);
 
   let totalSec = 0;
   const [percentage, setPercentage] = useState();
