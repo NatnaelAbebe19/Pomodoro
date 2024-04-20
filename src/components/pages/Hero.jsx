@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-
 const formatTime = (time) => {
   let minutes = Math.floor(time / 60);
   let seconds = Math.floor(time % 60);
@@ -20,6 +19,7 @@ function Hero({
 }) {
   const timerId = useRef(null);
   const [isPaused, setIsPaused] = useState(true);
+  // let Timing = useContext(TimerReset);
 
   function ringEnd() {
     const end = new Audio("/audio/End.mp3");
@@ -94,7 +94,11 @@ function Hero({
     clearInterval(timerId.current);
     setRemainingTime(workDuration * 60);
     setIsPaused(true);
+    setActive("work");
   };
+
+  // Timing.setTimersReset(handleReset);
+
   let totalSec = 0;
   const [percentage, setPercentage] = useState();
 

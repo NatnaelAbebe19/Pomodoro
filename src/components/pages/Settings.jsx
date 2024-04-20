@@ -20,17 +20,6 @@ function Settings({
     }
   };
 
-  // const handleDurationChange = (type, value) => {
-  //   onApply({ ...durations, [type]: parseInt(value) });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   onClose();
-  //   onApply(durations);
-  // };
-
   function handleWorkChange(e) {
     setWorkDuration(e.target.value);
   }
@@ -44,9 +33,6 @@ function Settings({
   }
 
   function onApply() {
-    // handleWorkChange();
-    // handleShortChange();
-    // handleLongChange();
     onClose();
   }
 
@@ -150,16 +136,3 @@ function Settings({
 }
 
 export default Settings;
-
-// const timerSettings = {
-//   pomodoroDuration: parseInt(pomodoroDuration),
-//   shortBreakDuration: parseInt(shortBreakDuration),
-//   longBreakDuration: parseInt(longBreakDuration),
-// };line number 31
-
-// pomodoroDuration,
-// onPomodoroChange,
-// shortBreakDuration,
-// onShortBreakChange,
-// longBreakDuration,
-// onLongBreakChange, Line number 6
