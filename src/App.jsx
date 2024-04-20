@@ -11,11 +11,19 @@ function App() {
   const [shortBreakDuration, setShortBreakDuration] = useState(5);
   const [longBreakDuration, setLongBreakDuration] = useState(15);
   const [active, setActive] = useState("work");
+  const [activeColor, setActiveColor] = useState("orange");
 
   return (
     <div>
-      <Navbar active={active} setActive={setActive} />
+      <Navbar
+        active={active}
+        setActive={setActive}
+        activeColor={activeColor}
+        setActiveColor={setActiveColor}
+      />
       <Hero
+        activeColor={activeColor}
+        setActiveColor={setActiveColor}
         active={active}
         setActive={setActive}
         workDuration={workDuration}
@@ -37,6 +45,8 @@ function App() {
           longBreakDuration={longBreakDuration}
           setLongBreakDuration={setLongBreakDuration}
           onClose={() => setShowModal(false)}
+          activeColor={activeColor}
+          setActiveColor={setActiveColor}
         />
       )}
     </div>

@@ -16,6 +16,8 @@ function Hero({
   shortBreakDuration,
   active,
   setActive,
+  setActiveColor,
+  activeColor,
 }) {
   const timerId = useRef(null);
   const [isPaused, setIsPaused] = useState(true);
@@ -111,7 +113,24 @@ function Hero({
     setPercentage(percentages);
   }, [remainingTime]);
 
-  const orange = "#F97170";
+  let orange = "#F97170";
+  // useEffect(() => {
+  switch (activeColor) {
+    case "orange":
+      orange = "#F97170";
+      break;
+    case "blue":
+      orange = "#6FF2F9";
+      break;
+    case "pink":
+      orange = "#D980F8";
+      break;
+    default:
+      orange = "#F97170";
+      break;
+  }
+  // }, [activeColor]);
+
   const green = "#4aec8c";
 
   return (
