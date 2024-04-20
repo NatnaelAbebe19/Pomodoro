@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-// import TimerContext from "../Context/TimerContext";
 
 const formatTime = (time) => {
   let minutes = Math.floor(time / 60);
@@ -19,8 +18,6 @@ function Hero({
   active,
   setActive,
 }) {
-  // const { remainingTime, isPaused, setRemainingTime, setIsPaused, resetTimer } =
-  // useContext(TimerContext);
   const timerId = useRef(null);
   const [isPaused, setIsPaused] = useState(true);
 
@@ -84,7 +81,7 @@ function Hero({
             setActive("work");
           }
         }
-      }, 10);
+      }, 1000);
     }
     return () => clearInterval(timerId.current);
   }, [isPaused, remainingTime]);
@@ -151,5 +148,3 @@ function Hero({
 }
 
 export default Hero;
-
-// setRemainingTime(timer * 60);
