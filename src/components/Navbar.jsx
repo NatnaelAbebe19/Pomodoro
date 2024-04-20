@@ -1,7 +1,6 @@
 import React from "react";
 
 function Navbar({ active, activeColor }) {
-
   let orange = "#F97170";
   // useEffect(() => {
   switch (activeColor) {

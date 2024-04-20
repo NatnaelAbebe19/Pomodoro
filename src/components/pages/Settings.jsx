@@ -44,7 +44,6 @@ function Settings({
   };
 
   let orange = "#F97170";
-  // useEffect(() => {
   switch (activeColor) {
     case "orange":
       orange = "#F97170";

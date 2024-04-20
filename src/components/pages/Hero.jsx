@@ -16,7 +16,6 @@ function Hero({
   shortBreakDuration,
   active,
   setActive,
-  setActiveColor,
   activeColor,
 }) {
   const timerId = useRef(null);
@@ -114,7 +113,6 @@ function Hero({
   }, [remainingTime]);
 
   let orange = "#F97170";
-  // useEffect(() => {
   switch (activeColor) {
     case "orange":
       orange = "#F97170";
@@ -129,7 +127,6 @@ function Hero({
       orange = "#F97170";
       break;
   }
-  // }, [activeColor]);
 
   const green = "#4aec8c";
 
