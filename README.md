@@ -17,3 +17,6 @@
 <img src="public/image/pink.png"  width="200px" height="350px"/>
   <img src="public/image/setting.png"  width="200px" height="350px"/>
 </div>
+
+## Demo
+<a href="https://pomodoro-six-ashen.vercel.app/" target="_blank">Click me </a> 
