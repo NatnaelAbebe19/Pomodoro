@@ -1,8 +1,22 @@
-# React + Vite
+#  <img src="public/image/logo.png" width="50px"/> Pomodoro
+## Increase focus and productivity with the Pomodoro Technique.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- This app provides a simple timer and visual countdown to help you implement focused work sessions and refreshing breaks.
 
-Currently, two official plugins are available:
+- Set custom work and break durations.
+- Track remaining time with a clear timer.
+- Optional audio notifications for session ends and breaks.
+# Technologies Used
+- React JS 
+- HTML 
+- CSS
+## Screenshot 
+<div style="display: flex; gap: 3rem;">
+<img src="public/image/orange.png"  width="200px" height="350px"/>
+<img src="public/image/blue.png"  width="200px" height="350px"/>
+<img src="public/image/pink.png"  width="200px" height="350px"/>
+  <img src="public/image/setting.png"  width="200px" height="350px"/>
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo
+<a href="https://pomodoro-six-ashen.vercel.app/" target="_blank">Click me </a> 
