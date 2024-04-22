@@ -12,16 +12,19 @@ function App() {
   const [longBreakDuration, setLongBreakDuration] = useState(15);
   const [active, setActive] = useState("work");
   const [activeColor, setActiveColor] = useState("blue");
+  const [activeFont, setActiveFont] = useState("sans");
 
   return (
     <div>
       <Navbar
+        activeFont={activeFont}
         active={active}
         setActive={setActive}
         activeColor={activeColor}
         setActiveColor={setActiveColor}
       />
       <Hero
+        activeFont={activeFont}
         activeColor={activeColor}
         setActiveColor={setActiveColor}
         active={active}
@@ -38,6 +41,8 @@ function App() {
       </div>
       {showModal && (
         <Settings
+          activeFont={activeFont}
+          setActiveFont={setActiveFont}
           workDuration={workDuration}
           setWorkDuration={setWorkDuration}
           shortBreakDuration={shortBreakDuration}

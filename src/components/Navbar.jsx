@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-function Navbar({ active, activeColor }) {
+function Navbar({ active, activeColor, activeFont }) {
   let color = "#F97170";
   switch (activeColor) {
     case "blue":
@@ -18,8 +18,8 @@ function Navbar({ active, activeColor }) {
   }
 
   return (
-    <div className="">
-      <h1 className="text-[#D6DCFA] text-3xl font-bold font-sans mb-6 p-8 w-full text-center">
+    <div className={`font-${activeFont}`}>
+      <h1 className="text-[#D6DCFA] text-3xl font-bold mb-6 p-8 w-full text-center">
         pomodoro
       </h1>
       <div className="flex justify-between w-[360px] mx-auto  rounded-full bg-[#141832] p-2 ">

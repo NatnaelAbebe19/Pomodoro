@@ -17,6 +17,7 @@ function Hero({
   active,
   setActive,
   activeColor,
+  activeFont,
 }) {
   const timerId = useRef(null);
   const [isPaused, setIsPaused] = useState(true);
@@ -131,11 +132,11 @@ function Hero({
   const green = "#4aec8c";
 
   return (
-    <div>
+    <div className={`font-${activeFont}`}>
       <div className="w-[300px] h-[300px] my-8 mx-auto flex justify-center items-center rounded-full cirlce">
         <div className="w-[260px] h-[260px] bg-[#141832] mx-auto flex justify-center items-center rounded-full shadow-xl shadow-[rgba(37,42,84,0.7)] shadow-offset-x-0  shadow-offset-y-0 shadow-blur-8">
           <div className="w-[240px] h-[240px] rounded-full gap-y-4 bg-[#] flex justify-center items-center flex-col">
-            <div className="text-[#D7E0FF] text-7xl font-bold font-sarif">
+            <div className="text-[#D7E0FF] text-7xl font-bold">
               <CircularProgressbar
                 value={percentage}
                 text={`${formatTime(remainingTime)}`}
@@ -143,7 +144,7 @@ function Hero({
                   textColor: "#fff",
                   pathColor: active === "work" ? color : green,
                   trailColor: "#141832",
-                  textSize: "27px",
+                  textSize: "25px",
                 })}
               />
             </div>

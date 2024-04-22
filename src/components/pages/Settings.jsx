@@ -12,6 +12,8 @@ function Settings({
   onClose,
   activeColor,
   setActiveColor,
+  activeFont,
+  setActiveFont,
 }) {
   const modalRef = useRef();
 
@@ -33,9 +35,6 @@ function Settings({
     setLongBreakDuration(e.target.value);
   }
 
-  const handleOrange = () => {
-    setActiveColor("orange");
-  };
   const handlePink = () => {
     setActiveColor("pink");
   };
@@ -62,12 +61,11 @@ function Settings({
           return "#F97170";
       }
     };
-
     setColor(getColorBasedOnActiveColor(activeColor));
   }, [activeColor]);
 
   return (
-    <div className="w-[100dvw]">
+    <div className={`w-[100dvw] font-${activeFont}`}>
       <form
         ref={modalRef}
         onClick={modalClose}
@@ -129,13 +127,28 @@ function Settings({
           <div className="flex justify-between ">
             <div className="uppercase font-semibold text-sm">Font</div>
             <div className="flex gap-x-4">
-              <div className="w-8 h-8 rounded-full bg-black text-white text-center cursor-pointer font-sans">
+              <div
+                onClick={() => setActiveFont("sans")}
+                className={`w-8 h-8 rounded-full bg-[${
+                  activeFont === "sans" ? color : "EEF0FB"
+                }] text-center cursor-pointer font-sans`}
+              >
                 Aa
               </div>
-              <div className="w-8 h-8 rounded-full bg-[#EEF0FB] text-center cursor-pointer font-serif">
+              <div
+                onClick={() => setActiveFont("serif")}
+                className={`w-8 h-8 rounded-full bg-[${
+                  activeFont === "serif" ? color : "EEF0FB"
+                }] text-center cursor-pointer font-serif`}
+              >
                 Aa
               </div>
-              <div className="w-8 h-8 rounded-full bg-[#EEF0FB] text-center cursor-pointer font-mono">
+              <div
+                onClick={() => setActiveFont("Dance")}
+                className={`w-8 h-8 rounded-full bg-[${
+                  activeFont === "Dance" ? color : "EEF0FB"
+                }] text-center cursor-pointer font-Dance`}
+              >
                 Aa
               </div>
             </div>
