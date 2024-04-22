@@ -112,19 +112,19 @@ function Hero({
     setPercentage(percentages);
   }, [remainingTime]);
 
-  let orange = "#F97170";
+  let color = "#F97170";
   switch (activeColor) {
-    case "orange":
-      orange = "#F97170";
-      break;
     case "blue":
-      orange = "#6FF2F9";
+      color = "#6FF2F9";
       break;
     case "pink":
-      orange = "#D980F8";
+      color = "#D980F8";
+      break;
+    case "green":
+      color = "#f6831e";
       break;
     default:
-      orange = "#F97170";
+      color = "#F97170";
       break;
   }
 
@@ -141,7 +141,7 @@ function Hero({
                 text={`${formatTime(remainingTime)}`}
                 styles={buildStyles({
                   textColor: "#fff",
-                  pathColor: active === "work" ? orange : green,
+                  pathColor: active === "work" ? color : green,
                   trailColor: "#141832",
                   textSize: "27px",
                 })}

@@ -11,7 +11,7 @@ function App() {
   const [shortBreakDuration, setShortBreakDuration] = useState(5);
   const [longBreakDuration, setLongBreakDuration] = useState(15);
   const [active, setActive] = useState("work");
-  const [activeColor, setActiveColor] = useState("orange");
+  const [activeColor, setActiveColor] = useState("blue");
 
   return (
     <div>

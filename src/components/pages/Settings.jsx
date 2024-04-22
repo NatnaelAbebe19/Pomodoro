@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { TiTick } from "react-icons/ti";
 
@@ -42,22 +42,29 @@ function Settings({
   const handleBlue = () => {
     setActiveColor("blue");
   };
+  const handleGreen = () => {
+    setActiveColor("green");
+  };
 
-  let orange = "#F97170";
-  switch (activeColor) {
-    case "orange":
-      orange = "#F97170";
-      break;
-    case "blue":
-      orange = "#6FF2F9";
-      break;
-    case "pink":
-      orange = "#D980F8";
-      break;
-    default:
-      orange = "#F97170";
-      break;
-  }
+  const [color, setColor] = useState("#F97170");
+
+  useEffect(() => {
+    const getColorBasedOnActiveColor = (activeColor) => {
+      switch (activeColor) {
+        case "blue":
+          return "#6FF2F9";
+        case "pink":
+          return "#D980F8";
+        case "green":
+          return "#f6831e";
+        default:
+          console.warn(`Unexpected activeColor: ${activeColor}`);
+          return "#F97170";
+      }
+    };
+
+    setColor(getColorBasedOnActiveColor(activeColor));
+  }, [activeColor]);
 
   return (
     <div className="w-[100dvw]">
@@ -138,12 +145,6 @@ function Settings({
             <div className="font-semibold text-sm">COLOR</div>
             <div className="flex gap-x-4 cursor-pointer">
               <div
-                onClick={handleOrange}
-                className="w-8 h-8 flex justify-center items-center bg-[#F86F6D] rounded-full cursor-pointer"
-              >
-                {activeColor === "orange" && <TiTick className="text-xl" />}
-              </div>
-              <div
                 onClick={handleBlue}
                 className="w-8 h-8 bg-[#6FF2F9] rounded-full cursor-pointer flex justify-center items-center"
               >
@@ -155,12 +156,18 @@ function Settings({
               >
                 {activeColor === "pink" && <TiTick className="text-xl" />}
               </div>
+              <div
+                onClick={handleGreen}
+                className="w-8 h-8 bg-[#f6831e] rounded-full cursor-pointer flex justify-center items-center"
+              >
+                {activeColor === "green" && <TiTick className="text-xl" />}
+              </div>
             </div>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className={`relative top-[2.3rem] left-28 bg-[${orange}] p-2 px-4 text-white font-semibold rounded-full md:left-[10rem]`}
+            className={`relative top-[2.3rem] left-28 bg-[${color}] p-2 px-4 text-white font-semibold rounded-full md:left-[10rem]`}
           >
             Apply
           </button>

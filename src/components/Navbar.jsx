@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Navbar({ active, activeColor }) {
-  let orange = "#F97170";
-  // useEffect(() => {
+  let color = "#F97170";
   switch (activeColor) {
-    case "orange":
-      orange = "#F97170";
-      break;
     case "blue":
-      orange = "#6FF2F9";
+      color = "#6FF2F9";
       break;
     case "pink":
-      orange = "#D980F8";
+      color = "#D980F8";
+      break;
+    case "green":
+      color = "#f6831e";
       break;
     default:
-      orange = "#F97170";
+      color = "#F97170";
       break;
   }
 
@@ -26,7 +25,7 @@ function Navbar({ active, activeColor }) {
       <div className="flex justify-between w-[360px] mx-auto  rounded-full bg-[#141832] p-2 ">
         <div
           className={`text-[#646985] font-bold ${
-            active === "work" ? `bg-[${orange}] text-[#141832]` : ""
+            active === "work" ? `bg-[${color}] text-[#141832]` : ""
           }   p-3 rounded-full cursor-pointer transition duration-600 ease-in-out`}
         >
           pomodoro
@@ -34,14 +33,14 @@ function Navbar({ active, activeColor }) {
 
         <div
           className={`text-[#646985] ${
-            active === "short" ? `bg-[${orange}] text-[#141832]` : ""
+            active === "short" ? `bg-[${color}] text-[#141832]` : ""
           } font-bold p-3 rounded-full cursor-pointer transition duration-600 ease-in-out`}
         >
           short break
         </div>
         <div
           className={`text-[#646985] ${
-            active === "long" ? `bg-[${orange}] text-[#141832]` : ""
+            active === "long" ? `bg-[${color}] text-[#141832]` : ""
           } font-bold p-3 rounded-full  cursor-pointer  transition duration-600 ease-in-out`}
         >
           long break
